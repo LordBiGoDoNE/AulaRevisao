@@ -1,0 +1,5 @@
+rootProject.name = 'AulaRevisao'
+
+include ':app'
+include ':lib'
+
