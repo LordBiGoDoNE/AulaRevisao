@@ -7,4 +7,10 @@ dependencies {
     implementation project(':lib')
 }
 
+application {
+    // Define the main class for the application.
+    mainClass = 'aularevisao.Main'
+}
+
+
 description = 'app'
