@@ -15,12 +15,16 @@ public class BasicCrudPANEL<ENTIDADE, DAO extends BasicCrudDAO<ENTIDADE>> extend
     DAO dao;
     JDialog cadastroEditarDialog;
     
-    public BasicCrudPANEL(DAO pDao, JDialog pCadastroEditarDialog) {
-        dao = pDao;
-        cadastroEditarDialog = pCadastroEditarDialog;
-        
+    public BasicCrudPANEL() {
         initComponents();
     }
+    
+//    public BasicCrudPANEL(DAO pDao, JDialog pCadastroEditarDialog) {
+//        dao = pDao;
+//        cadastroEditarDialog = pCadastroEditarDialog;
+//        
+//        initComponents();
+//    }
     
     public void carregarLista(Object[][] dados, Object[] colunas) {
         TableModel model = new DefaultTableModel(dados, colunas) {

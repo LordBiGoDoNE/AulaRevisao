@@ -2,6 +2,7 @@ package aularevisao.dao;
 
 import aularevisao.Conexao;
 import aularevisao.entity.Fabricante;
+import java.awt.AWTEvent;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;

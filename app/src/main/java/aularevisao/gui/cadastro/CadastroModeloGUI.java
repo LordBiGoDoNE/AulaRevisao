@@ -18,7 +18,7 @@ public class CadastroModeloGUI extends javax.swing.JDialog {
 
         editarDialog = new CadastroModeloEditarGUI((JFrame) this.getParent(), true, null);
 
-        BasicCrudPANEL panelConsulta = new BasicCrudPANEL<>(dao, editarDialog);
+        BasicCrudPANEL panelConsulta = new BasicCrudPANEL<>();
         panelConsulta.carregarLista(getDadosLista(), getColunasLista());
         
         panelConsultaModelo.add(panelConsulta);
