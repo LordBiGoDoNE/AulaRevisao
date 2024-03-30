@@ -4,7 +4,7 @@ public class Fabricante {
 
     private int id;
     private String nome;
-
+    
     public int getId() {
         return id;
     }

@@ -1,10 +1,6 @@
 package aularevisao.gui.cadastro;
 
-import aularevisao.dao.FabricanteDAO;
 import aularevisao.dao.ModeloDAO;
-import aularevisao.entity.Fabricante;
-import aularevisao.entity.Modelo;
-import java.util.List;
 import javax.swing.JFrame;
 
 public class CadastroModeloGUI extends javax.swing.JDialog {
@@ -18,32 +14,8 @@ public class CadastroModeloGUI extends javax.swing.JDialog {
 
         editarDialog = new CadastroModeloEditarGUI((JFrame) this.getParent(), true, null);
 
-        BasicCrudPANEL panelConsulta = new BasicCrudPANEL<>();
-        panelConsulta.carregarLista(getDadosLista(), getColunasLista());
-        
-        panelConsultaModelo.add(panelConsulta);
-    }
-
-    public Object[][] getDadosLista() {
-        List<Modelo> listaModelo = dao.select();
-
-        Object[][] dados = new Object[listaModelo.size()][3];
-
-        int i = 0;
-
-        for (Modelo modelo : listaModelo) {
-            dados[i][0] = modelo.getId();
-            dados[i][1] = modelo.getNome();
-            dados[i][2] = modelo.getId_fabricante();
-
-            i++;
-        }
-
-        return dados;
-    }
-
-    public Object[] getColunasLista() {
-        return new Object[]{"ID", "NOME", "ID FABRICANTE"};
+        pnlFabricante.init(dao, editarDialog);
+        pnlFabricante.carregarLista();
     }
 
     /**
@@ -56,7 +28,7 @@ public class CadastroModeloGUI extends javax.swing.JDialog {
     private void initComponents() {
 
         btnFechar = new javax.swing.JButton();
-        panelConsultaModelo = new javax.swing.JPanel();
+        pnlFabricante = new aularevisao.gui.cadastro.BasicCrudPANEL();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -67,27 +39,25 @@ public class CadastroModeloGUI extends javax.swing.JDialog {
             }
         });
 
-        panelConsultaModelo.setLayout(new javax.swing.BoxLayout(panelConsultaModelo, javax.swing.BoxLayout.LINE_AXIS));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 432, Short.MAX_VALUE)
-                        .addComponent(btnFechar))
-                    .addComponent(panelConsultaModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFechar)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelConsultaModelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlFabricante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 350, Short.MAX_VALUE)
                 .addComponent(btnFechar)
                 .addContainerGap())
         );
@@ -102,6 +72,6 @@ public class CadastroModeloGUI extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnFechar;
-    private javax.swing.JPanel panelConsultaModelo;
+    private aularevisao.gui.cadastro.BasicCrudPANEL pnlFabricante;
     // End of variables declaration//GEN-END:variables
 }

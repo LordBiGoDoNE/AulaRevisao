@@ -24,15 +24,14 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="btnFechar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="0" pref="432" max="32767" attributes="0"/>
-                      <Component id="btnFechar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="panelConsultaModelo" alignment="0" max="32767" attributes="0"/>
-              </Group>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlFabricante" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,8 +39,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="panelConsultaModelo" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="pnlFabricante" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="350" max="32767" attributes="0"/>
               <Component id="btnFechar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -57,9 +56,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFecharActionPerformed"/>
       </Events>
     </Component>
-    <Container class="javax.swing.JPanel" name="panelConsultaModelo">
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
-    </Container>
+    <Component class="aularevisao.gui.cadastro.BasicCrudPANEL" name="pnlFabricante">
+    </Component>
   </SubComponents>
 </Form>

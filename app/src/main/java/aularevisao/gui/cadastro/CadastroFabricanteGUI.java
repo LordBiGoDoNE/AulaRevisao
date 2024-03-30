@@ -2,6 +2,7 @@ package aularevisao.gui.cadastro;
 
 import aularevisao.dao.FabricanteDAO;
 import aularevisao.entity.Fabricante;
+import aularevisao.entity.Modelo;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -20,7 +21,7 @@ public class CadastroFabricanteGUI extends javax.swing.JDialog {
 
     public void carregarLista() {
         List<Fabricante> listaFabricante = dao.select();
-
+        
         Object[][] dados = new Object[listaFabricante.size()][2];
 
         int i = 0;
